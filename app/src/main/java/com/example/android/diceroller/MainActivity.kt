@@ -7,6 +7,8 @@ import android.widget.ImageView
 
 class MainActivity : AppCompatActivity() {
 
+    lateinit var diceFace: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -15,10 +17,11 @@ class MainActivity : AppCompatActivity() {
         rollButton.setOnClickListener {
             rollDice()
         }
+
+        diceFace = findViewById(R.id.dice_image)
     }
 
     private fun rollDice() {
-        val diceFace: ImageView = findViewById(R.id.dice_image)
 
         val randomNum = (1..6).random()
 
